@@ -3,7 +3,7 @@ package com.singlepoint.stock;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StockCalculator {
+public class ProfitCalculator {
 
     public int calculate(int[] stocks){
         if(stocks != null && stocks.length >= 2){

@@ -2,41 +2,39 @@ package com.singlepoint.stock;
 
 import org.junit.Test;
 
-import java.util.Random;
-
 import static org.junit.Assert.*;
 
-public class StockCalculatorTest {
+public class ProfitCalculatorTest {
 
     @Test
     public void calculateWithStockListNull() {
         int[] stocks = null;
-        StockCalculator stockCalculator = new StockCalculator();
-        int result = stockCalculator.calculate(stocks);
+        ProfitCalculator profitCalculator = new ProfitCalculator();
+        int result = profitCalculator.calculate(stocks);
         assertEquals(0, result);
     }
 
     @Test
     public void calculateWithStockListLessThan2() {
         int[] stocks = new int[]{1};
-        StockCalculator stockCalculator = new StockCalculator();
-        int result = stockCalculator.calculate(stocks);
+        ProfitCalculator profitCalculator = new ProfitCalculator();
+        int result = profitCalculator.calculate(stocks);
         assertEquals(0, result);
     }
 
     @Test
     public void calculateWithSmallDataSet(){
         int[] stocks = new int[]{20, 40, 52, 15, 30, 50, 10, 25};
-        StockCalculator stockCalculator = new StockCalculator();
-        int result = stockCalculator.calculate(stocks);
+        ProfitCalculator profitCalculator = new ProfitCalculator();
+        int result = profitCalculator.calculate(stocks);
         assertEquals(35, result);
     }
 
     @Test
     public void calculateWithLargeDataSet(){
         int[] stocks = largetStockList();
-        StockCalculator stockCalculator = new StockCalculator();
-        int result = stockCalculator.calculate(stocks);
+        ProfitCalculator profitCalculator = new ProfitCalculator();
+        int result = profitCalculator.calculate(stocks);
         assertEquals(99999999, result);
     }
 

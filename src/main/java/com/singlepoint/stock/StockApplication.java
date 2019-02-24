@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StockApplication implements CommandLineRunner {
 
 	@Autowired
-	private StockCalculator stockCalculator;
+	private ProfitCalculator profitCalculator;
 
 	public static void main(String[] args) {
 		SpringApplication.run(StockApplication.class, args);
@@ -18,6 +18,6 @@ public class StockApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		int[] stocks = new int[]{20,40,52,15,30,50,10,20};
-		System.out.println(stockCalculator.calculate(stocks));
+		System.out.println(profitCalculator.calculate(stocks));
 	}
 }
