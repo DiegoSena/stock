@@ -8,41 +8,41 @@ public class ProfitCalculatorTest {
 
     @Test
     public void calculateWithStockListNull() {
-        int[] stocks = null;
+        int[] prices = null;
         ProfitCalculator profitCalculator = new ProfitCalculator();
-        int result = profitCalculator.calculate(stocks);
+        int result = profitCalculator.calculate(prices);
         assertEquals(0, result);
     }
 
     @Test
     public void calculateWithStockListLessThan2() {
-        int[] stocks = new int[]{1};
+        int[] prices = new int[]{1};
         ProfitCalculator profitCalculator = new ProfitCalculator();
-        int result = profitCalculator.calculate(stocks);
+        int result = profitCalculator.calculate(prices);
         assertEquals(0, result);
     }
 
     @Test
     public void calculateWithSmallDataSet(){
-        int[] stocks = new int[]{20, 40, 52, 15, 30, 50, 10, 25};
+        int[] prices = new int[]{20, 40, 52, 15, 30, 50, 10, 25};
         ProfitCalculator profitCalculator = new ProfitCalculator();
-        int result = profitCalculator.calculate(stocks);
+        int result = profitCalculator.calculate(prices);
         assertEquals(35, result);
     }
 
     @Test
     public void calculateWithLargeDataSet(){
-        int[] stocks = largetStockList();
+        int[] prices = largetPriceList();
         ProfitCalculator profitCalculator = new ProfitCalculator();
-        int result = profitCalculator.calculate(stocks);
+        int result = profitCalculator.calculate(prices);
         assertEquals(99999999, result);
     }
 
-    private int[] largetStockList() {
-        int[] stocks = new int[100000000];
+    private int[] largetPriceList() {
+        int[] prices = new int[100000000];
         for (int i = 1; i < 100000000; i++) {
-            stocks[i] = i;
+            prices[i] = i;
         }
-        return stocks;
+        return prices;
     }
 }
